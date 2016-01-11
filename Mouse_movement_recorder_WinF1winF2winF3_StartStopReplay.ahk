@@ -24,9 +24,11 @@ SetBatchLines, -1
 
 
 
+; Sets the mouse speed that will be used if unspecified in Click and MouseMove/Click/Drag.
+SetDefaultMouseSpeed, 60 ; The speed to move the mouse in the range 0 (fastest) to 100 (slowest). Note: a speed of 0 will move the mouse instantly.
 
-SetDefaultMouseSpeed, 0
-SetMouseDelay, 0
+; Sets the delay that will occur after each mouse movement or click.
+SetMouseDelay, 60 ; Time in milliseconds, which can be an expression. Use -1 for no delay at all and 0 for the smallest possible delay 
 
 
 ~WheelDown::Wheel_down += A_EventInfo
