@@ -68,7 +68,7 @@ Return
   ; dont allow execution into recorded area
   ; if you want you could allow it
   borderPx:=30
-  if( ( xLeft - borderPx > xf3pos OR xf3pos > xRight + borderPx ) AND ( yf3pos < yTop - borderPx OR yf3pos > yBottom + borderPx ) )
+  ;~ if( ( xLeft - borderPx > xf3pos OR xf3pos > xRight + borderPx ) AND ( yf3pos < yTop - borderPx OR yf3pos > yBottom + borderPx ) )
     Gosub, replay
 
 
@@ -177,7 +177,10 @@ replaytimer:
   If (Time_Index > Mouse_data_%Data_Index%_9)
     {
       mouseSleepMiliSec:=0
-      MouseMove, Mouse_data_%Data_Index%_1, Mouse_data_%Data_Index%_2,%mouseSleepMiliSec%
+      ; if you add r then ists replay relative
+      x:=Mouse_data_%Data_Index%_1
+      y:=Mouse_data_%Data_Index%_2
+      MouseMove, x, y,%mouseSleepMiliSec%, 
       ;MouseMove, X, Y [, Speed, R]
       lButt := Mouse_data_%Data_Index%_3
       mButt := Mouse_data_%Data_Index%_4
